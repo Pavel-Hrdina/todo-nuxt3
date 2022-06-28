@@ -73,4 +73,11 @@ describe("useTodoStore", () => {
     const updated = store.items[0];
     expect(updated.done).toBe(true);
   });
+  test("updates a todo title", () => {
+    store.add({ title: "tested" });
+    const todo = store.items[0];
+    store.update(todo.id, { title: "tested" });
+    const updated = store.items[0];
+    expect(updated.title).toBe("tested");
+  });
 });
